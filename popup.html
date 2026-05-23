@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock Copy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 300px;
+      min-height: 200px;
+      font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .status-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .status-text {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .status-indicator.locked {
+      background: #ff6b6b;
+      box-shadow: 0 0 10px #ff6b6b;
+    }
+
+    .status-indicator.unlocked {
+      background: #51cf66;
+      box-shadow: 0 0 10px #51cf66;
+    }
+
+    .toggle-button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .toggle-button.unlock {
+      background: #51cf66;
+      color: white;
+      box-shadow: 0 4px 15px rgba(81, 207, 102, 0.4);
+    }
+
+    .toggle-button.unlock:hover {
+      background: #40c057;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(81, 207, 102, 0.6);
+    }
+
+    .toggle-button.lock {
+      background: #ff6b6b;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+
+    .toggle-button.lock:hover {
+      background: #fa5252;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    }
+
+    .toggle-button:active {
+      transform: translateY(0);
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .info strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 10px;
+      opacity: 0.7;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔓 Unlock Copy</h1>
+      <p>一键解除复制限制</p>
+    </div>
+
+    <div class="status-card">
+      <div class="status-text">
+        <span class="status-indicator locked" id="statusIndicator"></span>
+        <span id="statusText">当前状态：已锁定</span>
+      </div>
+      <button class="toggle-button unlock" id="toggleButton">
+        解除复制限制
+      </button>
+    </div>
+
+    <div class="info">
+      <strong>💡 使用说明</strong>
+      点击按钮即可解除当前网页的复制、右键、选择限制。适用于知乎、微信公众号、百度文库等网站。
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com" target="_blank">GitHub</a> • 
+      <a href="#" id="reportIssue">问题反馈</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
