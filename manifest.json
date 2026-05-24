@@ -1,11 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Unlock Copy - 一键解除复制限制",
-  "version": "1.0.0",
-  "description": "一键解除网站的复制、右键、选择限制，让你可以自由复制内容",
+  "name": "Unlock Copy Pro - 一键解除复制限制",
+  "version": "1.1.0",
+  "description": "🔓 一键解除网站的复制、右键、选择限制。支持 CSDN、百度文库、知乎、微信公众号等顽固平台",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "clipboardRead",
+    "clipboardWrite"
   ],
   "host_permissions": [
     "<all_urls>"

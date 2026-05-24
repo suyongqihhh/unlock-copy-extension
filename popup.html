@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unlock Copy</title>
+  <title>Unlock Copy Pro</title>
   <style>
     * {
       margin: 0;
@@ -12,8 +12,8 @@
     }
 
     body {
-      width: 300px;
-      min-height: 200px;
+      width: 320px;
+      min-height: 280px;
       font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -29,7 +29,7 @@
     }
 
     .header h1 {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
       margin-bottom: 5px;
     }
@@ -60,6 +60,7 @@
       border-radius: 50%;
       margin-right: 8px;
       vertical-align: middle;
+      animation: pulse 2s infinite;
     }
 
     .status-indicator.locked {
@@ -72,12 +73,18 @@
       box-shadow: 0 0 10px #51cf66;
     }
 
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
     .toggle-button {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: none;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -113,6 +120,34 @@
       transform: translateY(0);
     }
 
+    .supported-sites {
+      margin-top: 15px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .supported-sites strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .site-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .site-tag {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+
     .info {
       margin-top: 15px;
       padding: 10px;
@@ -144,13 +179,23 @@
     .footer a:hover {
       text-decoration: underline;
     }
+
+    .version {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 10px;
+      opacity: 0.7;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <span class="version">v1.1.0</span>
+    
     <div class="header">
-      <h1>🔓 Unlock Copy</h1>
-      <p>一键解除复制限制</p>
+      <h1>🔓 Unlock Copy Pro</h1>
+      <p>一键解除复制限制（增强版）</p>
     </div>
 
     <div class="status-card">
@@ -163,9 +208,26 @@
       </button>
     </div>
 
+    <div class="supported-sites">
+      <strong>🎯 支持的平台</strong>
+      <div class="site-list">
+        <span class="site-tag">CSDN</span>
+        <span class="site-tag">百度文库</span>
+        <span class="site-tag">知乎</span>
+        <span class="site-tag">微信公众号</span>
+        <span class="site-tag">道客巴巴</span>
+        <span class="site-tag">原创力文档</span>
+        <span class="site-tag">简书</span>
+        <span class="site-tag">掘金</span>
+      </div>
+    </div>
+
     <div class="info">
-      <strong>💡 使用说明</strong>
-      点击按钮即可解除当前网页的复制、右键、选择限制。适用于知乎、微信公众号、百度文库等网站。
+      <strong>💡 新功能</strong>
+      • 自动复制选中文本，绕过复制提示<br>
+      • 拦截右键菜单限制<br>
+      • 移除禁止选择的 CSS 样式<br>
+      • 支持更多顽固平台
     </div>
 
     <div class="footer">
